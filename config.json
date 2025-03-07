@@ -1,6 +1,6 @@
 {
     "github": {
-        "token": "ithub_pat_11AGM2KDQ0cuWTBVPQ5hzN_cgCUVKM1aPqfZdnSxOi8tIhnynZ2I1b5OpuR28Wo3qhRZ26A54PTEUTA468",
+        "token": "your_github_token",
         "subscriptions_file": "subscriptions.json",
         "progress_frequency_days": 1,
         "progress_execution_time": "08:00"
