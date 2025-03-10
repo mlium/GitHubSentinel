@@ -6,7 +6,10 @@ from logger import LOG  # 导入日志模块
 class LLM:
     def __init__(self):
         # 创建一个OpenAI客户端实例
-        self.client = OpenAI()
+        self.client = OpenAI(
+            api_key=os.getenv('SILICONFLOW_API_KEY'),
+            base_url='https://api.siliconflow.cn/v1'
+        )
         # 从TXT文件加载提示信息
         with open("prompts/report_prompt.txt", "r", encoding='utf-8') as file:
             self.system_prompt = file.read()
@@ -35,7 +38,7 @@ class LLM:
         try:
             # 调用OpenAI GPT模型生成报告
             response = self.client.chat.completions.create(
-                model="gpt-4o-mini",  # 指定使用的模型版本
+                model="deepseek-ai/DeepSeek-R1",  # 指定使用的模型版本
                 messages=messages
             )
             LOG.debug("GPT response: {}", response)

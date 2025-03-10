@@ -26,6 +26,9 @@ demo = gr.Interface(
     fn=export_progress_by_date_range,  # 指定界面调用的函数
     title="GitHubSentinel",  # 设置界面标题
     inputs=[
+        gr.Radio(
+            ["gpt-4o-mini", "deepseek-ai/DeepSeek-R1"], label="模型选择", info="选择使用的模型"
+        ),
         gr.Dropdown(
             subscription_manager.list_subscriptions(), label="订阅列表", info="已订阅GitHub项目"
         ),  # 下拉菜单选择订阅的GitHub项目
